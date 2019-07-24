@@ -5,10 +5,10 @@ services:
 before_install:
   - docker build -t dmytroz/react-test2 -f ./client/Dockerfile.dev ./client/Dockerfile
   
- script:
+script:
    - docker run -e CI=true dmytroz/react-test2 npm test -- --coverage
    
- after_success:
+after_success:
    - docker build -t dmytroz/multi-client ./client 
    - docker build -t dmytroz/multi-ngnix ./ngnix 
    - docker build -t dmytroz/multi-server ./server
