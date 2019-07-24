@@ -10,7 +10,7 @@ script:
    #123
 after_success:
    - docker build -t vinfreeman/multi-client ./client 
-   - docker build -t vinfreeman/multi-nginx ./ngnix 
+   - docker build -t vinfreeman/multi-nginx ./nginx 
    - docker build -t vinfreeman/multi-server ./server
    - docker build -t vinfreeman/multi-worker ./worker
    
