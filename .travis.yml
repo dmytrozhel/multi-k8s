@@ -7,7 +7,7 @@ before_install:
   
 script:
    - docker run -e CI=true dmytroz/react-test2 npm test -- --coverage
-   
+   #123
 after_success:
    - docker build -t dmytroz/multi-client ./client 
    - docker build -t dmytroz/multi-ngnix ./ngnix 
