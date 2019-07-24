@@ -9,14 +9,14 @@ script:
    - docker run -e CI=true dmytroz/react-test2 npm test -- --coverage
    #123
 after_success:
-   - docker build -t dmytroz/multi-client ./client 
-   - docker build -t dmytroz/multi-ngnix ./ngnix 
-   - docker build -t dmytroz/multi-server ./server
-   - docker build -t dmytroz/multi-worker ./worker
+   - docker build -t vinfreeman/multi-client ./client 
+   - docker build -t vinfreeman/multi-ngnix ./ngnix 
+   - docker build -t vinfreeman/multi-server ./server
+   - docker build -t vinfreeman/multi-worker ./worker
    
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    
-   - docker push dmytroz/multi-client
-   - docker push dmytroz/multi-ngnix
-   - docker push dmytroz/multi-server
-   - docker push dmytroz/multi-worker
+   - docker push vinfreeman/multi-client
+   - docker push vinfreeman/multi-ngnix
+   - docker push vinfreeman/multi-server
+   - docker push vinfreeman/multi-worker
