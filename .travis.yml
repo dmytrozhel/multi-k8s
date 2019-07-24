@@ -3,7 +3,7 @@ services:
   -docker
   
 before_install:
-  - docker build -t dmytroz/react-test2 -f ./client/Dockerfile.dev ./client/Dockerfile
+  - docker build -t dmytroz/react-test2 -f ./client/Dockerfile.dev ./client
   
 script:
    - docker run -e CI=true dmytroz/react-test2 npm test -- --coverage
