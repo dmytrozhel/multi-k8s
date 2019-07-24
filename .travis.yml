@@ -10,13 +10,13 @@ script:
    #123
 after_success:
    - docker build -t vinfreeman/multi-client ./client 
-   - docker build -t vinfreeman/multi-ngnix ./ngnix 
+   - docker build -t vinfreeman/multi-nginx ./ngnix 
    - docker build -t vinfreeman/multi-server ./server
    - docker build -t vinfreeman/multi-worker ./worker
    
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    
    - docker push vinfreeman/multi-client
-   - docker push vinfreeman/multi-ngnix
+   - docker push vinfreeman/multi-nginx
    - docker push vinfreeman/multi-server
    - docker push vinfreeman/multi-worker
