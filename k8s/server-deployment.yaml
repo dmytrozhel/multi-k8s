@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: server-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       component: server
@@ -34,5 +34,4 @@ spec:
                valueFrom:
                  secretKeyRef:
                    name: pgpassword
-                   key: PGPASSWORD                    
-             
+                   key: PGPASSWORD
