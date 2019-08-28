@@ -17,7 +17,7 @@ before_install:
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    - docker build -t vinfreeman/react-test -f ./client/Dockerfile.dev ./client
    
- script:
+script:
    - docker run vinfreeman/react-test npm run test -- --coverage
    
 deploy:
